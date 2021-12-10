@@ -1,4 +1,5 @@
 dependencies:
+  '@adobe/lit-mobx': 2.0.0_lit@2.0.0+mobx@6.3.8
   '@polymer/iron-icon': 3.0.1
   '@polymer/iron-list': 3.1.0
   '@polymer/polymer': 3.2.0
@@ -103,7 +104,9 @@ dependencies:
   '@vaadin/virtual-list': 22.0.1
   construct-style-sheets-polyfill: 3.0.4
   date-fns: 2.23.0
+  line-awesome: 1.3.0
   lit: 2.0.0
+  mobx: 6.3.8
 devDependencies:
   '@vaadin/application-theme-plugin': link:target/plugins/application-theme-plugin
   '@vaadin/build-status-plugin': link:target/plugins/build-status-plugin
@@ -131,6 +134,16 @@ devDependencies:
   workbox-webpack-plugin: 6.2.0_webpack@4.46.0
 lockfileVersion: 5.2
 packages:
+  /@adobe/lit-mobx/2.0.0_lit@2.0.0+mobx@6.3.8:
+    dependencies:
+      lit: 2.0.0
+      mobx: 6.3.8
+    dev: false
+    peerDependencies:
+      lit: ^2.0.0
+      mobx: ^5.0.0 || ^6.0.0
+    resolution:
+      integrity: sha512-5uSN9vV8XrLAxLxlmZHb1z2eSD5aqxdrWu6GtidtOVyvDDEw6ry1FPXH9J3/N/bFA0Yo7ciXtu9WMYpWpQnYNg==
   /@apideck/better-ajv-errors/0.3.1_ajv@8.8.2:
     dependencies:
       ajv: 8.8.2
@@ -1337,13 +1350,15 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==
-  /@npmcli/fs/1.0.0:
+  /@npmcli/fs/1.1.0:
     dependencies:
       '@gar/promisify': 1.1.2
       semver: 7.3.5
     dev: true
+    engines:
+      node: ^12.13.0 || ^14.15.0 || >=16
     resolution:
-      integrity: sha512-8ltnOpRR/oJbOp8vaGUnipOi3bqkcW+sLHFlyXIr08OGHmVJLB1Hn7QtGXbYcpVtH1gAYZTlmDXtE4YV0+AMMQ==
+      integrity: sha512-VhP1qZLXcrXRIaPoqb4YA55JQxLNF3jNR4T55IdOJa3+IFJKNYHtPvtXx8slmeMavj37vCzCfrqQM1vWLsYKLA==
   /@npmcli/move-file/1.1.2:
     dependencies:
       mkdirp: 1.0.4
@@ -3827,7 +3842,7 @@ packages:
   /browserslist/3.2.8:
     dependencies:
       caniuse-lite: 1.0.30001286
-      electron-to-chromium: 1.4.14
+      electron-to-chromium: 1.4.15
     dev: true
     hasBin: true
     resolution:
@@ -3835,7 +3850,7 @@ packages:
   /browserslist/4.18.1:
     dependencies:
       caniuse-lite: 1.0.30001286
-      electron-to-chromium: 1.4.14
+      electron-to-chromium: 1.4.15
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
@@ -3916,14 +3931,14 @@ packages:
       integrity: sha512-a0tMB40oefvuInr4Cwb3GerbL9xTj1D5yg0T5xrjGCGyfvbxseIXX7BAO/u/hIXdafzOI5JC3wDwHyf24buOAQ==
   /cacache/15.3.0:
     dependencies:
-      '@npmcli/fs': 1.0.0
+      '@npmcli/fs': 1.1.0
       '@npmcli/move-file': 1.1.2
       chownr: 2.0.0
       fs-minipass: 2.1.0
       glob: 7.1.6
       infer-owner: 1.0.4
       lru-cache: 6.0.0
-      minipass: 3.1.5
+      minipass: 3.1.6
       minipass-collect: 1.0.2
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
@@ -4669,10 +4684,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-9lt9Zse4hPucPkoP7FHDF0LQAlGyF9JVpnClFLFH3aSSbxmyoqINRpp/9wePWJTUl4KOQwRL72Iw3InHPDkoGw==
-  /electron-to-chromium/1.4.14:
+  /electron-to-chromium/1.4.15:
     dev: true
     resolution:
-      integrity: sha512-RsGkAN9JEAYMObS72kzUsPPcPGMqX1rBqGuXi9aa4TBKLzICoLf+DAAtd0fVFzrniJqYzpby47gthCUoObfs0Q==
+      integrity: sha512-WDw2IUL3k4QpbzInV3JZK+Zd1NjWJPDZ28oUSchWb/kf6AVj7/niaAlgcJlvojFa1d7pJSyQ/KSZsEtq5W7aGQ==
   /elliptic/6.5.4:
     dependencies:
       bn.js: 4.12.0
@@ -5209,7 +5224,7 @@ packages:
       integrity: sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
   /fs-minipass/2.1.0:
     dependencies:
-      minipass: 3.1.5
+      minipass: 3.1.6
     dev: true
     engines:
       node: '>= 8'
@@ -6188,6 +6203,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==
+  /line-awesome/1.3.0:
+    dev: false
+    resolution:
+      integrity: sha512-Y0YHksL37ixDsHz+ihCwOtF5jwJgCDxQ3q+zOVgaSW8VugHGTsZZXMacPYZB1/JULBi6BAuTCTek+4ZY/UIwcw==
   /lines-and-columns/1.2.4:
     dev: true
     resolution:
@@ -6484,7 +6503,7 @@ packages:
       integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
   /minipass-collect/1.0.2:
     dependencies:
-      minipass: 3.1.5
+      minipass: 3.1.6
     dev: true
     engines:
       node: '>= 8'
@@ -6492,7 +6511,7 @@ packages:
       integrity: sha512-6T6lH0H8OG9kITm/Jm6tdooIbogG9e0tLgpY6mphXSm/A9u8Nq1ryBG+Qspiub9LjWlBPsPS3tWQ/Botq4FdxA==
   /minipass-flush/1.0.5:
     dependencies:
-      minipass: 3.1.5
+      minipass: 3.1.6
     dev: true
     engines:
       node: '>= 8'
@@ -6500,23 +6519,23 @@ packages:
       integrity: sha512-JmQSYYpPUqX5Jyn1mXaRwOda1uQ8HP5KAT/oDSLCzt1BYRhQU0/hDtsB1ufZfEEzMZ9aAVmsBw8+FWsIXlClWw==
   /minipass-pipeline/1.2.4:
     dependencies:
-      minipass: 3.1.5
+      minipass: 3.1.6
     dev: true
     engines:
       node: '>=8'
     resolution:
       integrity: sha512-xuIq7cIOt09RPRJ19gdi4b+RiNvDFYe5JH+ggNvBqGqpQXcru3PcRmOZuHBKWK1Txf9+cQ+HMVN4d6z46LZP7A==
-  /minipass/3.1.5:
+  /minipass/3.1.6:
     dependencies:
       yallist: 4.0.0
     dev: true
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-+8NzxD82XQoNKNrl1d/FSi+X8wAEWR+sbYAfIvub4Nz0d22plFG72CEVVaufV8PNf4qSslFTD8VMOxNVhHCjTw==
+      integrity: sha512-rty5kpw9/z8SX9dmxblFA6edItUmwJgMeYDZRrwlIVN27i8gysGbznJwUggw2V/FVqFSDdWy040ZPS811DYAqQ==
   /minizlib/2.1.2:
     dependencies:
-      minipass: 3.1.5
+      minipass: 3.1.6
       yallist: 4.0.0
     dev: true
     engines:
@@ -6563,6 +6582,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
+  /mobx/6.3.8:
+    dev: false
+    resolution:
+      integrity: sha512-RfG2y766P1o9u9xrQht/HBXEoUPIr4B3Gjri3reLW/TuHm3I/3TfBBS0OaeMbw19RIF0AymqjDNlJgakN4ZK7g==
   /move-concurrently/1.0.1:
     dependencies:
       aproba: 1.2.0
@@ -7083,7 +7106,7 @@ packages:
     dependencies:
       icss-utils: 4.1.1
       postcss: 7.0.39
-      postcss-selector-parser: 6.0.6
+      postcss-selector-parser: 6.0.7
       postcss-value-parser: 4.2.0
     dev: true
     engines:
@@ -7093,7 +7116,7 @@ packages:
   /postcss-modules-scope/2.2.0:
     dependencies:
       postcss: 7.0.39
-      postcss-selector-parser: 6.0.6
+      postcss-selector-parser: 6.0.7
     dev: true
     engines:
       node: '>= 6'
@@ -7106,7 +7129,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-1//E5jCBrZ9DmRX+zCtmQtRSV6PV42Ix7Bzj9GbwJceduuf7IqP8MgeTXuRDHOWj2m0VzZD5+roFWDuU8RQjcg==
-  /postcss-selector-parser/6.0.6:
+  /postcss-selector-parser/6.0.7:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -7114,7 +7137,7 @@ packages:
     engines:
       node: '>=4'
     resolution:
-      integrity: sha512-9LXrvaaX3+mcv5xkg5kFwqSzSH1JIObIx51PrndZwlmznwXRfxMddDvo9gve3gVR8ZTKgoFDdWkbRFmEhT4PMg==
+      integrity: sha512-U+b/Deoi4I/UmE6KOVPpnhS7I7AYdKbhGcat+qTQ27gycvaACvNEw11ba6RrkwVmDVRW7sigWgLj4/KbbJjeDA==
   /postcss-value-parser/4.2.0:
     dev: true
     resolution:
@@ -7234,7 +7257,6 @@ packages:
     resolution:
       integrity: sha1-nsYfeQSYdXB9aUFFlv2Qek1xHnM=
   /querystring/0.2.0:
-    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
     dev: true
     engines:
       node: '>=0.4.x'
@@ -7939,7 +7961,7 @@ packages:
       integrity: sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==
   /ssri/8.0.1:
     dependencies:
-      minipass: 3.1.5
+      minipass: 3.1.6
     dev: true
     engines:
       node: '>= 8'
@@ -8103,7 +8125,7 @@ packages:
     dependencies:
       chownr: 2.0.0
       fs-minipass: 2.1.0
-      minipass: 3.1.5
+      minipass: 3.1.6
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
@@ -8940,6 +8962,7 @@ packages:
     resolution:
       integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 specifiers:
+  '@adobe/lit-mobx': 2.0.0
   '@polymer/iron-icon': 3.0.1
   '@polymer/iron-list': 3.1.0
   '@polymer/polymer': 3.2.0
@@ -9058,9 +9081,11 @@ specifiers:
   fork-ts-checker-webpack-plugin: 6.2.1
   glob: 7.1.6
   html-webpack-plugin: 4.5.1
+  line-awesome: 1.3.0
   lit: 2.0.0
   lit-css-loader: 0.1.0
   loader-utils: 2.0.0
+  mobx: ^6.3.5
   typescript: 4.4.3
   webpack: 4.46.0
   webpack-cli: 4.9.0

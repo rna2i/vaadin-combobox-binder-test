@@ -1,3 +1,17 @@
+# Test binding objects to combobox
+
+Vaadin v22, Java 8
+- Run the app
+- Select last name from the combo box
+- Check value in console log.
+
+If you choose 'Name1' in the drop down, the expected value is 'Value1'.
+The value in 'value-changed' is correct.
+
+The value bound to the lastName property in the Person entity is:
+{name: 'Name1', value: 'Value1'}
+
+
 # Custom project from start.vaadin.com
 
 This project can be used as a starting point to create your own Vaadin application with Spring Boot.
